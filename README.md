@@ -255,6 +255,48 @@ X<sub>反</sub>=10011001
 
 > 使程序的执行流程跳转到语句标号所指定的语句。不提倡使用
 
+### 2.11 自定义类型
+#### 类型别名：为已有类型另外命名
+* typedef 已有类型名 新类型名表
+
+> 例：typedef double Area, Volume;  
+> typedef int Natural;  
+> Natural i1,i2;  
+> Area a;  
+> Volume v;  
+
+* using 新类型名=已有类型名
+
+> 例：using Area=double  
+> using Volume=double
+
+#### 枚举类型
+* 定义方式：将全部可取值一一列举出了
+* 语法形式（不限定作用域）：enum 枚举类型名 {变量值列表}
+
+> 例：enum Weekday {SUN,MON,TUE,WED,THU,FRI,SAT}
+
+* 枚举元素是常量，不能对它们进行赋值。不能写复制表达式：SUN=0
+* 元素默认值，依次为：0,1,2,……
+* 可以在声明时另行指定枚举元素的值
+
+> 如：enum Weekday {SUN=7,MON=1,TUE,WED,THU,FRI,SAT}
+
+* 枚举值可以进行关系运算
+* 整数值不能直接赋值给枚举变量。如需要将整数赋值给枚举变量，应进行强制类型转换
+* 枚举值可以赋给整型变量
+
+#### auto类型与decltype类型
+* auto：编译器通过初始值自动推断变量的类型
+
+> 例：auto val=val1+val2  
+> 如果val1+val2是int类型，则val是int类型
+
+* decltype：定义一个变量与某一表达式的类型相同，但并不用该表达式初始化变量
+
+> 例：decltype(i)j=2  
+> 表示j以2作为初始值，类型与i一致
+
 
 
 
