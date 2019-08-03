@@ -375,4 +375,10 @@ X<sub>反</sub>=10011001
 * 内联函数的定义必须出现在内联函数第一次被调用之前
 * 对内联函数不能进行异常接口声明
 
+### 3.7 constexpr（常量表达式）函数
+* constexpr修饰的函数，在其所有参数都是constexpr时，一定返回constexpr
+
+> 例：constexpr int get_size(){return 20;}  
+> constexpr int foo = get_size(); //正确：foo是一个常量表达式
+
 
