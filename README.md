@@ -421,6 +421,26 @@ constexpr int foo = get_size(); //正确：foo是一个常量表达式
     * 数据抽象：`int hour,int minute,int second`
     * 代码抽象：
     `setTime(),showTime()`
-
-
     
+#### 封装
+* 将抽象出的数据、代码封装在一起，形成类
+    * 目的：增强安全性和简化编程，使用者不必了解具体的实现细节，而只需要通过外部接口，以特定的访问权限，来使用类的成员
+    * 实现封装：类声明中的{}
+
+```
+class Clock{
+  public:
+    void setTime(int newH,int newM,int newS);
+    void showTime();
+  private:
+    int hout,minute,second;
+}
+```
+
+#### 继承
+* 在已有类的基础上，进行扩展形成新的类
+
+#### 多态
+* 多态：同一名称，不同的功能实现方式
+* 目的：达到行为标识同一，减少程序中标识符的个数
+* 实现：重载函数和虚函数
