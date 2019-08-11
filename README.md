@@ -434,7 +434,7 @@ class Clock{
     void showTime();
   private:
     int hour, minute, second;
-}
+};
 /*
 class Clock{}为边界
 public、private为特定的访问权限
@@ -474,7 +474,7 @@ class 类名称{
     私有成员
   protected:
     保护型成员
-}
+};
 ```
 
 #### 类内初始值
@@ -492,7 +492,7 @@ class Clock{
     void showTime();
   private:
     int hour=0, minute=0, second=0;
-}
+};
 ```
 
 #### 类成员的访问控制
