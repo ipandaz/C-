@@ -172,8 +172,10 @@ X<sub>反</sub>=10011001
 * 语法形式：sizeof(类型名) 或 sizeof 表达式
 * 结果值：“类型名”所指定的类型，或“表达式”的结果类型所占的字节数
 
-> 例：sizeof(short)  
-> sizeof x
+```
+sizeof(short)  
+sizeof x
+```
 
 #### 位运算符
 1. 按位与（\&）
@@ -184,7 +186,7 @@ X<sub>反</sub>=10011001
     
     * 用途举例2：取出指定位
 
-    > 例：有char c; int a; 取出a的低字节，置于c中：c=a\&0xff
+    > 例：有char c; int a; 取出a的低字节，置于c中：`c=a\&0xff`
 
 2. 按位或（\|）
     * 运算规则：将两个运算量的每一个位进行逻辑或操作
@@ -259,16 +261,20 @@ X<sub>反</sub>=10011001
 #### 类型别名：为已有类型另外命名
 * typedef 已有类型名 新类型名表
 
-`typedef double Area, Volume;  
+```
+typedef double Area, Volume;  
 typedef int Natural;  
 Natural i1,i2;  
 Area a;  
-Volume v;`  
+Volume v;
+```  
 
 * using 新类型名=已有类型名
 
-`using Area=double  
-using Volume=double`
+```
+using Area=double  
+using Volume=double
+```
 
 #### 枚举类型
 * 定义方式：将全部可取值一一列举出了
@@ -336,10 +342,12 @@ using Volume=double`
 * 引用(&)是**标识符的别名**
 * 定义一个引用时，必须同时对它进行初始化，使它指向一个已存在的对象
 
-`int i, j;  
+```
+int i, j;  
 int &ri = i; //定义int引用ri，并初始化为变量i的引用  
 j = 10;  
-ri = j; //相当于i = j`
+ri = j; //相当于i = j
+```
 
 * 一旦一个引用被初始化后，就不能改为指向其他对象
 * 引用可以**作为形参**（双向传递）
@@ -356,8 +364,10 @@ ri = j; //相当于i = j`
 * initializer_list是一个类模板
 * 使用模板时，我们需要在模板名字后面跟一对尖括号，括号内给出类型参数。
 
-`initializer_list<string> ls; //initializer_list的元素类型是string  
-initializer_list<int> li; //initializer_list的元素类型是int`
+```
+initializer_list<string> ls; //initializer_list的元素类型是string  
+initializer_list<int> li; //initializer_list的元素类型是int
+```
 
 * initializer_list比较特殊的一点是，其对象中的元素永远是常量值，我们无法改变initializer_list对象中元素的值
 * 含有initializer_list形参的函数也可以同时拥有其他形参
@@ -378,8 +388,10 @@ initializer_list<int> li; //initializer_list的元素类型是int`
 ### 3.7 constexpr（常量表达式）函数
 * constexpr修饰的函数，在其所有参数都是constexpr时，一定返回constexpr
 
-`constexpr int get_size(){return 20;}  
-constexpr int foo = get_size(); //正确：foo是一个常量表达式`
+```
+constexpr int get_size(){return 20;}  
+constexpr int foo = get_size(); //正确：foo是一个常量表达式
+```
 
 ### 3.8 函数重载
 * C++允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。
@@ -410,6 +422,6 @@ constexpr int foo = get_size(); //正确：foo是一个常量表达式`
     * 数据抽象：`int hour,int minute,int second`
     * 代码抽象：
     `setTime(),showTime()`
-    
-    
+
+
     
