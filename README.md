@@ -435,6 +435,11 @@ class Clock{
   private:
     int hout,minute,second;
 }
+/*
+class Clock{}为边界
+public、private为特定的访问权限
+setTime()、showTime()为外部接口
+*/
 ```
 
 #### 继承
@@ -444,3 +449,4 @@ class Clock{
 * 多态：同一名称，不同的功能实现方式
 * 目的：达到行为标识同一，减少程序中标识符的个数
 * 实现：重载函数和虚函数
+
