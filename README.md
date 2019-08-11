@@ -101,7 +101,7 @@ X<sub>反</sub>=10011001
 
 #### 默认形式
 为double型，如果后缀F（或f）可以使其成为float型
-> 例：12.3f
+> 例：`12.3f`
 
 ### 2.4 转义字符
 * \a 响铃
@@ -145,7 +145,7 @@ X<sub>反</sub>=10011001
 * const 数据类型说明符 常量名=常量值
 * 或 数据类型说明符 const 常量名=常量值
 
-> 例：const float PI=3.1415926
+> 例：`const float PI=3.1415926`
 
 * 符号常量在定义时一定要初始化，在程序中间不能改变其值
 
@@ -156,7 +156,7 @@ X<sub>反</sub>=10011001
     * 先求解表达式1，再求解表达式2
     * 最终结果为表达式2的值
 
-> 例：a=a\*5,a\*4，最终结果为60
+> 例：`a=a\*5,a\*4`，最终结果为60
 
 #### 条件运算符与条件表达式
 * 一般形式
@@ -225,7 +225,7 @@ X<sub>反</sub>=10011001
     * 类型转换操作符：
     
     > const_cast、dynamic_cast、reinterpret_cast、static_cast  
-    > 例：int(z), (int)z, static_cast\<int\>(z)三种完全等价
+    > 例：`int(z), (int)z, static_cast\<int\>(z)三种完全等价`
 
 ### 2.9 常用I/O流类库操纵符
 
@@ -240,7 +240,7 @@ X<sub>反</sub>=10011001
 | setsprecision(int) | 设置浮点数的小数位数（包括小数点） |
 | setw(int) | 设置域宽 |
 
-> 例：cout<<setw(5)<<setsprecision(3)<<3.1415;
+> 例：`cout<<setw(5)<<setsprecision(3)<<3.1415;`
 
 ### 2.10 控制语句
 * break语句
@@ -259,28 +259,28 @@ X<sub>反</sub>=10011001
 #### 类型别名：为已有类型另外命名
 * typedef 已有类型名 新类型名表
 
-> 例：typedef double Area, Volume;  
-> typedef int Natural;  
-> Natural i1,i2;  
-> Area a;  
-> Volume v;  
+`typedef double Area, Volume;  
+typedef int Natural;  
+Natural i1,i2;  
+Area a;  
+Volume v;`  
 
 * using 新类型名=已有类型名
 
-> 例：using Area=double  
-> using Volume=double
+`using Area=double  
+using Volume=double`
 
 #### 枚举类型
 * 定义方式：将全部可取值一一列举出了
 * 语法形式（不限定作用域）：enum 枚举类型名 {变量值列表}
 
-> 例：enum Weekday {SUN,MON,TUE,WED,THU,FRI,SAT}
+> 例：`enum Weekday {SUN,MON,TUE,WED,THU,FRI,SAT}`
 
 * 枚举元素是常量，不能对它们进行赋值。不能写复制表达式：SUN=0
 * 元素默认值，依次为：0,1,2,……
 * 可以在声明时另行指定枚举元素的值
 
-> 如：enum Weekday {SUN=7,MON=1,TUE,WED,THU,FRI,SAT}
+> 如：`enum Weekday {SUN=7,MON=1,TUE,WED,THU,FRI,SAT}`
 
 * 枚举值可以进行关系运算
 * 整数值不能直接赋值给枚举变量。如需要将整数赋值给枚举变量，应进行强制类型转换
@@ -289,12 +289,12 @@ X<sub>反</sub>=10011001
 #### auto类型与decltype类型
 * auto：编译器通过初始值自动推断变量的类型
 
-> 例：auto val=val1+val2  
+> 例：`auto val=val1+val2`  
 > 如果val1+val2是int类型，则val是int类型
 
 * decltype：定义一个变量与某一表达式的类型相同，但并不用该表达式初始化变量
 
-> 例：decltype(i)j=2  
+> 例：`decltype(i)j=2`  
 > 表示j以2作为初始值，类型与i一致
 
 ## 3. 函数
@@ -336,10 +336,10 @@ X<sub>反</sub>=10011001
 * 引用(&)是**标识符的别名**
 * 定义一个引用时，必须同时对它进行初始化，使它指向一个已存在的对象
 
-> 例：int i, j;  
-> int &ri = i; //定义int引用ri，并初始化为变量i的引用  
-> j = 10;  
-> ri = j; //相当于i = j
+`int i, j;  
+int &ri = i; //定义int引用ri，并初始化为变量i的引用  
+j = 10;  
+ri = j; //相当于i = j`
 
 * 一旦一个引用被初始化后，就不能改为指向其他对象
 * 引用可以**作为形参**（双向传递）
@@ -356,8 +356,8 @@ X<sub>反</sub>=10011001
 * initializer_list是一个类模板
 * 使用模板时，我们需要在模板名字后面跟一对尖括号，括号内给出类型参数。
 
-> 例：initializer_list<string> ls; //initializer_list的元素类型是string  
-> initializer_list<int> li; //initializer_list的元素类型是int
+`initializer_list<string> ls; //initializer_list的元素类型是string  
+initializer_list<int> li; //initializer_list的元素类型是int`
 
 * initializer_list比较特殊的一点是，其对象中的元素永远是常量值，我们无法改变initializer_list对象中元素的值
 * 含有initializer_list形参的函数也可以同时拥有其他形参
@@ -378,8 +378,8 @@ X<sub>反</sub>=10011001
 ### 3.7 constexpr（常量表达式）函数
 * constexpr修饰的函数，在其所有参数都是constexpr时，一定返回constexpr
 
-> 例：constexpr int get_size(){return 20;}  
-> constexpr int foo = get_size(); //正确：foo是一个常量表达式
+`constexpr int get_size(){return 20;}  
+constexpr int foo = get_size(); //正确：foo是一个常量表达式`
 
 ### 3.8 函数重载
 * C++允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。
@@ -397,3 +397,19 @@ X<sub>反</sub>=10011001
     * 求绝对值函数（abs）
 * 使用系统函数是要包含相应的头文件，例：
     * cmath
+
+## 4. 类与对象
+### 4.1 面向对象程序设计的基本特点
+#### 抽象
+* 对同一类对象的共同属性和行为进行概况，形成类
+    * 先注意问题的本质及描述，其次是实现过程或细节
+    * 数据抽象：描述某类对象的属性或状态（对象相互区别的物理量）
+    * 代码抽象：描述某类对象的共有的行为特征或具有的功能
+    * 抽象的实现：类
+* 抽象实例————钟表
+    * 数据抽象：`int hour,int minute,int second`
+    * 代码抽象：
+    `setTime(),showTime()`
+    
+    
+    
